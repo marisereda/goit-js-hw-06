@@ -17,11 +17,11 @@ const itemClass = "task03__item";
 const imgClass = "task03__img";
 const galleryEl = document.querySelector(".gallery");
 
-function createGaleryMarkUp(images, itemClass, imgClass) {
+function createGaleryMarkUp() {
   return images.reduce((acc, img) => {
     acc += `<li class ="${itemClass}"><img class = "${imgClass}" src="${img.url}" alt="${img.url}"></li>`;
     return acc;
   }, "");
 }
 
-galleryEl.insertAdjacentHTML("afterbegin", createGaleryMarkUp(images, itemClass, imgClass));
+galleryEl.insertAdjacentHTML("afterbegin", createGaleryMarkUp());
