@@ -12,10 +12,11 @@ btnDestroyEl.addEventListener("click", destroyElement);
 
 function createElement() {
   destroyElement();
-  console.log(typeof inputEl.value);
+
   let markUp = "";
   let widthElement = 30;
   let heightElement = 30;
+
   for (let i = 0; i < Number(inputEl.value); i += 1) {
     markUp += `<div style="width:${widthElement}px; height:${heightElement}px; margin-top: 10px; border: 1px solid grey; background-color:${getRandomHexColor()}"></div>`;
     widthElement += 10;
