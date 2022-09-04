@@ -13,8 +13,8 @@ const images = [
   },
 ];
 
-const itemClass = "task03__item";
-const imgClass = "task03__img";
+const itemClass = "gallery__item";
+const imgClass = "gallery__img";
 const galleryEl = document.querySelector(".gallery");
 
 function createGaleryMarkUp() {
