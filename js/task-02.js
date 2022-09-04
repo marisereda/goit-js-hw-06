@@ -3,19 +3,15 @@ const ingredients = ["Potatoes", "Mushrooms", "Garlic", "Tomatos", "Herbs", "Con
 const ingredientsEl = document.querySelector("#ingredients");
 const className = "item";
 
-function createListItem(item, className) {
+function createListItem(text, className) {
   const itemEl = document.createElement("li");
-  itemEl.textContent = item;
+  itemEl.textContent = text;
   itemEl.classList.add(className);
-  return itemEl.outerHTML;
+  return itemEl;
 }
 
-function getMarkUp(items, className) {
-  const markUp = items.reduce((acc, item) => {
-    acc += createListItem(item, className);
-    return acc;
-  }, "");
-  return markUp;
-}
-
-ingredientsEl.innerHTML = getMarkUp(ingredients, className);
+const fragment = document.createDocumentFragment();
+ingredients.forEach((item) => {
+  fragment.append(createListItem(item, className));
+});
+ingredientsEl.append(fragment);
