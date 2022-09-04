@@ -9,6 +9,12 @@ function handleSubmit(event) {
   const {
     elements: { email, password },
   } = event.currentTarget;
+
+  if (!email.value || !password.value) {
+    alert("All fields must be filled in!");
+    return;
+  }
+
   dataForm.email = email.value;
   dataForm.password = password.value;
   console.log(dataForm);
