@@ -1,24 +1,18 @@
-const categoriesEl = document.querySelectorAll("#categories .item");
+const categoryEls = document.querySelectorAll("#categories .item");
 
 // ------------------------------------------------------------------
-function getNumberOfCategories(categoryList) {
-  return `Number of categories: ${categoryList.length}\n\n`;
+function printNumberOfCategories(categoryList) {
+  console.log(`Number of categories: ${categoryList.length}\n\n`);
 }
 
 // ------------------------------------------------------------------
-function findHeader(categoryList) {
-  let headerEl;
-  let itemEl;
-  categoryList = [...categoryList];
-
-  const result = categoryList.reduce((acc, category) => {
-    headerEl = category.querySelector("h2");
-    itemEl = category.querySelectorAll("li");
-    acc += `Category: ${headerEl.outerText}\nElements: ${itemEl.length}\n\n`;
-    return acc;
-  }, "");
-  return result;
+function printCategories(categoryList) {
+  [...categoryList].forEach((category) => {
+    const headerEl = category.querySelector("h2");
+    const itemEl = category.querySelectorAll("li");
+    console.log(`Category: ${headerEl.outerText}\nElements: ${itemEl.length}\n\n`);
+  });
 }
 
-console.log(getNumberOfCategories(categoriesEl));
-console.log(findHeader(categoriesEl));
+printNumberOfCategories(categoryEls);
+printCategories(categoryEls);
